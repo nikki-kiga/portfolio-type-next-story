@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import '../styles/global.scss'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import React from 'react';
+import App from 'next/app';
+
+import { ThemeProvider } from '../providers/ThemeProvider';
+
+export default class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <div>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+      </div>
+    );
+  }
 }
-
-export default MyApp
