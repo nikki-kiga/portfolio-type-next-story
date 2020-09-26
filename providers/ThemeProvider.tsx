@@ -1,7 +1,5 @@
 //References code from Carl Rippon on using preferred theme
-
 import React from 'react';
-import { getTheme } from './themeAccess';
 
 type ThemeContextType = {
   mode: string,
@@ -23,8 +21,7 @@ export const useTheme = () => React.useContext(ManageThemeContext)
 
 export const ThemeProvider = ({children,}: Props) => {
   const [themeName, setThemeName] = React.useState(defaultMode);
-  const setTheme = getTheme(themeName);
-
+  
   React.useEffect(() => {
     const darkPref = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -32,6 +29,8 @@ export const ThemeProvider = ({children,}: Props) => {
     darkPref ? setThemeName('dark') 
       : setThemeName('light');
   },[]);
+
+  const setTheme = () => themeName === 'dark' ? setThemeName('light') : setThemeName('dark');
 
   return (
     <ManageThemeContext.Provider value={{

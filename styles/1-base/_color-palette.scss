@@ -1,0 +1,28 @@
+$themes: (
+    light: (
+        primary: #FAFAFA,
+        secondary: #FFF,
+        contrast: black,
+        accent: grey,
+        highlight: rgb(255, 174, 0),
+    ),
+    dark: (
+        primary: #37474F,
+        secondary: #212121,
+        contrast: white,
+        accent: grey,
+        highlight: rgb(0, 140, 255)
+    )
+);
+
+$theme: map-get($themes, dark);
+
+@function color($color-name) {
+    @return map-get($theme, $color-name);
+}
+
+@mixin theme-color($theme-name: 'dark') {
+    $theme: map-get($themes, $theme-name) !global;
+    @content
+}
+

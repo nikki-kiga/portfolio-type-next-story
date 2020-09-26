@@ -1,3 +1,6 @@
+import styles from '../../styles/2-components/button.module.scss';
+import React from 'react';
+
 export interface Props {
   label: string;
   onClick: () => void;
@@ -6,7 +9,7 @@ export interface Props {
 
 export const Button = ({label, onClick, disabled = false} : Props) => {
   return (
-    <button className={`Button`}
+    <button className={`btn ${styles.secondary}`}
       onClick={!disabled ? onClick : () => {}}>
       {label}
     </button>

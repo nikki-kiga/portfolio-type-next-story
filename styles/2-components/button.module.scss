@@ -1,0 +1,62 @@
+@use "../1-base/color-palette" as *;
+@use '../1-base/sizes' as sizes;
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  @include button-reset;
+  border: by-size(xxs) solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.primary {
+  @include theme-color() {
+    color: color(primary);
+    border-color: color(accent);
+  }
+
+  @include theme-color(light) {
+    color: color(primary);
+    border-color: color(accent);
+  }
+  padding: 4rem;
+  &:focus, :hover {
+    @include theme-color() {
+      color: color(secondary)
+    }
+    @include theme-color(light) {
+      color: color(secondary)
+    }
+  }
+}
+
+.secondary {
+  @include theme-color() {
+    color: color(secondary)
+  }
+
+  @include theme-color(light) {
+    color: color(secondary)
+  }
+
+  &:focus, :hover {
+    @include theme-color() {
+      color: color(primary)
+    }
+
+    @include theme-color(light) {
+      color: color(primary)
+    }
+  }
+}
