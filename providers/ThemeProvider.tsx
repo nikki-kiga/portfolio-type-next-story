@@ -2,8 +2,8 @@
 import React from 'react';
 
 type ThemeContextType = {
-  mode: string,
-  toggle (): void;
+  theme: string,
+  toggle: () => void;
 }
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 const defaultMode = 'dark';
 
 export const ManageThemeContext: React.Context<ThemeContextType> = React.createContext({
-  mode: defaultMode,
+  theme: defaultMode,
   toggle: () => {}
 });
 
@@ -30,13 +30,10 @@ export const ThemeProvider = ({children,}: Props) => {
       : setThemeName('light');
   },[]);
 
-  const setTheme = () => themeName === 'dark' ? setThemeName('light') : setThemeName('dark');
+  const setTheme = () => setThemeName(themeName === 'dark' ? 'light' : 'dark');
 
   return (
-    <ManageThemeContext.Provider value={{
-      mode:themeName,
-      toggle: setTheme
-    }}>
+    <ManageThemeContext.Provider value={{ theme: themeName, toggle: setTheme}}>
       {children}
     </ManageThemeContext.Provider>
   )

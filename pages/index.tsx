@@ -1,14 +1,16 @@
 import { Button } from "@components/Button/Button";
 import * as React from "react";
-import {} from '../components/Button/Button';
+import Head from 'next/head'
+
+import Layout from '../components/Layout'
+import { useTheme } from "providers/ThemeProvider";
 const Home = () => {
   return (
-    <>
-    <h1>Welcome to My Next App!</h1>
-    <Button label={'Test Button'} onClick={() => console.log('clicked!')}></Button>
-    </>
-    
-
+    <Layout>
+      <Head>
+        <title>Template Typescript Next Project</title>
+      </Head>
+    </Layout>
   )
 };
 

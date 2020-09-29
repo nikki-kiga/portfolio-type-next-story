@@ -1,0 +1,15 @@
+@use './color-palette' as c;
+
+@mixin prim-second($name : 'dark') {
+  .primary {
+      color: c.color($name, 'contrast');
+      border-color: c.color($name, 'accent');
+      background-color: c.color($name, 'primary');
+  }
+
+  .secondary {
+    color: c.color($name, 'contrast');
+    border-color: c.color($name, 'accent');
+    background-color: c.color($name, 'primary');
+  }
+}

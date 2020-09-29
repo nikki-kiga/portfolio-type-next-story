@@ -1,5 +1,6 @@
 @use "../1-base/color-palette" as *;
 @use '../1-base/sizes' as sizes;
+@use '../1-base/theme_primary_secondary' as prim-second;
 
 @mixin button-reset {
   padding: 0;
@@ -11,7 +12,6 @@
 }
 
 .btn {
-  @include button-reset;
   border: by-size(xxs) solid;
   display: flex;
   align-items: center;
@@ -19,44 +19,5 @@
   position: relative;
 }
 
-
-.primary {
-  @include theme-color() {
-    color: color(primary);
-    border-color: color(accent);
-  }
-
-  @include theme-color(light) {
-    color: color(primary);
-    border-color: color(accent);
-  }
-  padding: 4rem;
-  &:focus, :hover {
-    @include theme-color() {
-      color: color(secondary)
-    }
-    @include theme-color(light) {
-      color: color(secondary)
-    }
-  }
-}
-
-.secondary {
-  @include theme-color() {
-    color: color(secondary)
-  }
-
-  @include theme-color(light) {
-    color: color(secondary)
-  }
-
-  &:focus, :hover {
-    @include theme-color() {
-      color: color(primary)
-    }
-
-    @include theme-color(light) {
-      color: color(primary)
-    }
-  }
-}
+@include prim-second.prim-second('dark');
+@include prim-second.prim-second('light');

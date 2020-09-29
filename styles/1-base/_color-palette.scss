@@ -15,14 +15,8 @@ $themes: (
     )
 );
 
-$theme: map-get($themes, dark);
-
-@function color($color-name) {
-    @return map-get($theme, $color-name);
-}
-
-@mixin theme-color($theme-name: 'dark') {
-    $theme: map-get($themes, $theme-name) !global;
-    @content
+@function color($theme: 'dark', $color-name: 'primary') {
+    $curr : map-get($themes, $theme);
+    @return map-get($curr, $color-name);
 }
 
