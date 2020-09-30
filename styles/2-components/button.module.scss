@@ -1,5 +1,6 @@
-@use "../1-base/color-palette" as *;
+@use "../1-base/color-palette" as c;
 @use '../1-base/sizes' as sizes;
+@use '../1-base/theme' as t;
 @use '../1-base/theme_primary_secondary' as prim-second;
 
 @mixin button-reset {
@@ -17,7 +18,16 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  .dark-theme & {
+    background-color: red;
+  }
+
+  .light-theme & {
+    background-color: sandybrown;
+  }
 }
 
-@include prim-second.prim-second('dark');
-@include prim-second.prim-second('light');
+
+
+
