@@ -22,6 +22,7 @@ export const useTheme = () => React.useContext(ManageThemeContext)
 export const ThemeProvider = ({children,}: Props) => {
   const [themeName, setThemeName] = React.useState(defaultMode);
   
+  //Use system preferences for dark mode
   React.useEffect(() => {
     const darkPref = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -30,7 +31,12 @@ export const ThemeProvider = ({children,}: Props) => {
       : setThemeName('light');
   },[]);
 
-  const setTheme = () => setThemeName(themeName === 'dark' ? 'light' : 'dark');
+  //Update state for string of theme as well as update class on body
+  const setTheme = () => {
+    setThemeName(themeName === 'dark' ? 'light' : 'dark');
+    themeName === 'dark' ? document.documentElement.classList.add(defaultMode)
+    : document.documentElement.classList.remove(defaultMode)
+  };
 
   return (
     <ManageThemeContext.Provider value={{ theme: themeName, toggle: setTheme}}>

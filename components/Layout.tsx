@@ -1,15 +1,12 @@
 import * as React from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import { useTheme } from "providers/ThemeProvider";
-import styles from '../styles/3-Layout/layout.module.scss';
+
+import styles from '../styles/3-layout/layout.module.scss';
 
 const Layout = ({children}) => {
-
-  const {theme} = useTheme()
-  const themeStyle = theme === 'dark' ? 'dark-theme' : 'light-theme';
  return (
-   <div className={`${styles[themeStyle]}`}>
+   <div className={styles.layout}>
    <Header></Header>
    <main>
      {children}

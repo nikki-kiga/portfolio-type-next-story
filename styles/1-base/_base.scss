@@ -1,6 +1,23 @@
 @use 'sizes';
-@use 'color-palette';
 @use 'spacing';
+
+:root {
+  --colorPrimary: #FAFAFA;
+  --colorSecondary: rgba(255, 255, 255, 0.931);
+  --colorContrast: #121212;
+  --colorAccent: grey;
+  --colorHighlight: rgb(255, 174, 0);
+  --size-test-sm: 2px;
+}
+
+:root.dark {
+  --colorPrimary: #37474F;
+  --colorSecondary: #212121;
+  --colorContrast: white;
+  --colorAccent: grey;
+  --colorHighlight:  rgb(0, 140, 255);
+  --size-test-sm: 2px;
+}
 
 html,
 body {
