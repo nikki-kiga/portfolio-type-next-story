@@ -1,11 +1,9 @@
 //References code from Carl Rippon on using preferred theme
-
 import React from 'react';
-import { getTheme } from './themeAccess';
 
 type ThemeContextType = {
-  mode: string,
-  toggle (): void;
+  theme: string,
+  toggle: () => void;
 }
 
 type Props = {
@@ -15,7 +13,7 @@ type Props = {
 const defaultMode = 'dark';
 
 export const ManageThemeContext: React.Context<ThemeContextType> = React.createContext({
-  mode: defaultMode,
+  theme: defaultMode,
   toggle: () => {}
 });
 
@@ -23,8 +21,8 @@ export const useTheme = () => React.useContext(ManageThemeContext)
 
 export const ThemeProvider = ({children,}: Props) => {
   const [themeName, setThemeName] = React.useState(defaultMode);
-  const setTheme = getTheme(themeName);
-
+  
+  //Use system preferences for dark mode
   React.useEffect(() => {
     const darkPref = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -33,11 +31,15 @@ export const ThemeProvider = ({children,}: Props) => {
       : setThemeName('light');
   },[]);
 
+  //Update state for string of theme as well as update class on body
+  const setTheme = () => {
+    setThemeName(themeName === 'dark' ? 'light' : 'dark');
+    themeName === 'dark' ? document.documentElement.classList.add(defaultMode)
+    : document.documentElement.classList.remove(defaultMode)
+  };
+
   return (
-    <ManageThemeContext.Provider value={{
-      mode:themeName,
-      toggle: setTheme
-    }}>
+    <ManageThemeContext.Provider value={{ theme: themeName, toggle: setTheme}}>
       {children}
     </ManageThemeContext.Provider>
   )

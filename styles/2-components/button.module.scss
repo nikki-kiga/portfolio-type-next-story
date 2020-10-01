@@ -1,0 +1,28 @@
+@use '../1-base/sizes' as sizes;
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  border: var(--size-test-sm) solid var(--colorAccent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--colorContrast);
+}
+
+.primary {
+  background: var(--colorPrimary); 
+}
+
+.secondary {
+  background: var(--colorSecondary);
+}
+
