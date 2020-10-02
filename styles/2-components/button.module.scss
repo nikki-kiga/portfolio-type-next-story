@@ -15,7 +15,15 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  top: 50%;
   color: var(--colorContrast);
+  border-radius: 1.75rem;
+  padding: 0.15rem 0.5rem;
+
+  &:hover, 
+  &:focus {
+    background-color: var(--colorAccent);
+  }
 }
 
 .primary {
@@ -23,6 +31,6 @@
 }
 
 .secondary {
-  background: var(--colorSecondary);
+  background: none;
 }
 
