@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/2-components/toggle.module.scss';
 
 interface Props {
   onChange : () => void;
@@ -8,14 +9,13 @@ interface Props {
 
 const Toggle = ({onChange, label = 'toggle', checked}: Props) => {
   return (
-  <label>
     <input
+      className={styles.toggle}
       type="checkbox"
+      name={label}
       checked={checked}
       onChange={onChange}
     />
-    {label}
-  </label>
   )
 }
 
