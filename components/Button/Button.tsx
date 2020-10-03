@@ -1,7 +1,6 @@
 import styles from '../../styles/2-components/button.module.scss';
-import React from 'react';
 
-export interface Props {
+interface Props {
   label: string;
   onClick: () => void;
   disabled?: boolean;
