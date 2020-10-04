@@ -2,8 +2,8 @@
 @use 'spacing';
 
 :root {
-  --colorPrimary: #FAFAFA;
-  --colorSecondary: rgba(255, 255, 255, 0.931);
+  --colorPrimary:rgb(202, 202, 202);
+  --colorSecondary: #FAFAFA;
   --colorContrast: #121212;
   --colorAccent: grey;
   --colorHighlight: rgb(255, 174, 0);
@@ -11,8 +11,8 @@
 }
 
 :root.dark {
-  --colorPrimary: #37474F;
-  --colorSecondary: #212121;
+  --colorPrimary: #212121;
+  --colorSecondary:#37474F;
   --colorContrast: white;
   --colorAccent: grey;
   --colorHighlight:  rgb(0, 140, 255);

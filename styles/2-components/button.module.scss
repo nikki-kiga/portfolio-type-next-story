@@ -10,7 +10,7 @@
 }
 
 .btn {
-  border: var(--size-test-sm) solid var(--colorAccent);
+  border: 1px solid var(--colorAccent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
   top: 50%;
   color: var(--colorContrast);
   border-radius: 1.75rem;
-  padding: 0.15rem 0.5rem;
+  padding: .75rem 1.5rem;
 
   &:hover, 
   &:focus {
