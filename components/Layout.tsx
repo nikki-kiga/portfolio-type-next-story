@@ -7,11 +7,14 @@ import styles from '../styles/3-layout/layout.module.scss';
 const Layout = ({children}) => {
  return (
    <div className={styles.layout}>
-   <Header></Header>
-   <main>
-     {children}
-   </main>
-   <Footer></Footer>
+      {/* <a className="visually-hidden" href="#main-content">
+        Skip to main content
+      </a> */}
+      <Header></Header>
+        <main id="main-content">
+          {children}
+        </main>
+      <Footer></Footer>
    </div>
  )
 }

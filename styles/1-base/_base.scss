@@ -2,8 +2,8 @@
 @use 'spacing';
 
 :root {
-  --colorPrimary: #FAFAFA;
-  --colorSecondary: rgba(255, 255, 255, 0.931);
+  --colorPrimary:rgb(202, 202, 202);
+  --colorSecondary: #FAFAFA;
   --colorContrast: #121212;
   --colorAccent: grey;
   --colorHighlight: rgb(255, 174, 0);
@@ -11,8 +11,8 @@
 }
 
 :root.dark {
-  --colorPrimary: #37474F;
-  --colorSecondary: #212121;
+  --colorPrimary: #212121;
+  --colorSecondary:#37474F;
   --colorContrast: white;
   --colorAccent: grey;
   --colorHighlight:  rgb(0, 140, 255);
@@ -23,8 +23,20 @@ html,
 body {
   padding: 0;
   margin: 0;
+  color: var(--colorContrast);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body.dark img {
+  filter: brightness(.8) contrast(1.2);
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
 }
 
 a {
@@ -34,4 +46,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:global(.visually-hidden) {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

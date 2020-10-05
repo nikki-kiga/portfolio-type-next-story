@@ -1,10 +1,12 @@
-import * as React from 'react'
+import React from 'react'
+import styles from '../styles/2-components/footer.module.scss';
 
 const Footer = () => {
   return (
-    <>
-    <p>FOOTER</p>
-    </>
+    <footer className={styles.footer}>
+      <ul>
+      </ul>
+    </footer>
   )
 }
 

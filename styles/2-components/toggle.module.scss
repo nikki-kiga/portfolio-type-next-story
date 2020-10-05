@@ -1,0 +1,24 @@
+/*Styling references code from aliceyt on prototypr*/
+.toggle {
+  margin: 0;
+  -webkit-appearance: none;
+  width: 2rem;
+  height: 1rem;
+  border-radius: 1rem;
+  transition: all ease-in-out .3s;
+  background-color: var(--colorAccent);
+}
+
+.toggle:before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  transition: all ease-in-out .3s;
+  background-color: #f2f2f2;
+}
+
+.toggle:checked:before {
+  transform: translate(100%);
+}

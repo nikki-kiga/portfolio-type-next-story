@@ -10,12 +10,21 @@
 }
 
 .btn {
-  border: var(--size-test-sm) solid var(--colorAccent);
+  border: 1px solid var(--colorAccent);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  top: 50%;
   color: var(--colorContrast);
+  border-radius: 1.75em;
+  padding: .75em 1.5em;
+  cursor: pointer;
+
+  &:hover, 
+  &:focus {
+    background-color: var(--colorAccent);
+  }
 }
 
 .primary {
@@ -23,6 +32,5 @@
 }
 
 .secondary {
-  background: var(--colorSecondary);
+  background: none;
 }
-

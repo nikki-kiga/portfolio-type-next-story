@@ -29,6 +29,7 @@ export const ThemeProvider = ({children,}: Props) => {
     ).matches;
     darkPref ? setThemeName('dark') 
       : setThemeName('light');
+      setTheme();
   },[]);
 
   //Update state for string of theme as well as update class on body
