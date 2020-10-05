@@ -1,0 +1,54 @@
+.navbar {
+  margin-left: 1rem;
+  display: flex;
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--colorSecondary);
+  visibility: none;
+  transition: .5s ease;
+}
+
+ul.menu-active {
+  opacity: 1;
+  visibility: visible;
+  transition: .5s ease;
+}
+
+.overlay a {
+  display: block;
+  color: var(--colorContrast);
+  margin: auto;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 2px;
+}
+.overlay a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: -4px;
+  left: 0;
+  background: var(--colorHighlight);
+  transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+}
+
+.overlay a:hover:after {
+  width: 100%;
+  transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+}
+
+.menu-active > button {
+  content: "Close"
+}
+

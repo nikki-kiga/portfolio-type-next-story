@@ -17,8 +17,9 @@
   position: relative;
   top: 50%;
   color: var(--colorContrast);
-  border-radius: 1.75rem;
-  padding: .75rem 1.5rem;
+  border-radius: 1.75em;
+  padding: .75em 1.5em;
+  cursor: pointer;
 
   &:hover, 
   &:focus {
@@ -33,4 +34,3 @@
 .secondary {
   background: none;
 }
-

@@ -1,6 +1,26 @@
 .header {
+  padding: 1rem;
+  background-color: var(--colorSecondary);
+}
+
+.header-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--colorSecondary);
+  justify-content: space-between;
+}
+
+.header .logo {
+  display: flex;
+  justify-content: flex-start;
+  justify-self: flex-start;
+}
+
+.header .controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  align-self: start;
+  justify-self: end;
 }
