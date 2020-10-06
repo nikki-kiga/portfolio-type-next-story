@@ -1,4 +1,6 @@
 @use '../1-base/sizes' as sizes;
+@use '../1-base/boxshadow' as b;
+@use '../1-base/breakpoints' as bp;
 
 @mixin button-reset {
   padding: 0;
@@ -10,27 +12,79 @@
 }
 
 .btn {
-  border: 1px solid var(--colorAccent);
+  border: 2px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   top: 50%;
-  color: var(--colorContrast);
-  border-radius: 1.75em;
+  color: var(--colorOnSurface);
+  border-radius: 1px;
   padding: .75em 1.5em;
   cursor: pointer;
 
-  &:hover, 
+  &:hover {
+    background-color: var(--colorSecondary);
+    opacity: .9;
+  }
   &:focus {
-    background-color: var(--colorAccent);
+    border: 2px solid var(--colorSecondary);
   }
 }
 
 .primary {
+  color: var(--colorOnOther);
   background: var(--colorPrimary); 
 }
 
 .secondary {
+  display:border-box;
   background: none;
+  border: 2px solid var(--colorSecondary);
+}
+
+.hamburger {
+  background: transparent;
+  height: 2.4rem;
+  width: 2.4rem;
+  position: relative;
+  cursor: pointer;
+
+  &:hover:before, &:hover:after {
+    background-color: var(--colorOnOther);
+  }
+
+  &:before, &:after {
+    background-color: var(--colorOnSurface);
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2px;
+    transition: .2s;
+    @include b.elevation-2(black);
+
+  }
+
+  &:before {
+    top: 0.8rem;
+  }
+
+  &:after {
+    top: 1.2rem;
+  }
+
+  @include bp.mq('large', min) {
+    display: none;
+  }
+}
+
+.menu-active.hamburger {
+  &:before {
+    top: 1.2;
+    transform: translateY(.2rem) rotate(45deg);
+  }
+  &:after {
+    top: 1.2;
+    transform: translateY(-.2rem) rotate(-45deg);
+  }
 }

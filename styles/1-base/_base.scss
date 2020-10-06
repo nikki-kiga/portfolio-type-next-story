@@ -2,28 +2,34 @@
 @use 'spacing';
 
 :root {
-  --colorPrimary:rgb(202, 202, 202);
-  --colorSecondary: #FAFAFA;
-  --colorContrast: #121212;
-  --colorAccent: grey;
-  --colorHighlight: rgb(255, 174, 0);
-  --size-test-sm: 2px;
+  --colorSurface: #f0f1f1;
+  --colorMid: #c4c9c8;
+  --colorAccent: #6C7A77;
+  --colorOnSurface: #141414;
+
+  --colorPrimary: #688685;
+  --colorSecondary:#7e786e;
+  --colorOnOther: #FAFAFA;
+  --colorHighlight: #f8e693;
 }
 
 :root.dark {
-  --colorPrimary: #212121;
-  --colorSecondary:#37474F;
-  --colorContrast: white;
-  --colorAccent: grey;
-  --colorHighlight:  rgb(0, 140, 255);
-  --size-test-sm: 2px;
+  --colorSurface:#242424;
+  --colorMid: #333333;
+  --colorAccent: #5e5e5e;
+  --colorOnSurface:#FAFAFA;
+
+  --colorPrimary: #4858e3;
+  --colorSecondary:#9ad7ff;
+  --colorOnOther: #000000;
+  --colorHighlight:#FFB74D;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  color: var(--colorContrast);
+  color: var(--colorOnSurface);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -46,13 +52,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-:global(.visually-hidden) {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
