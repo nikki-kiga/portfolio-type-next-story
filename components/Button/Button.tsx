@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/2-components/button.module.scss';
 
-interface Props {
+export interface Props {
   onClick: () => void;
   id: string;
   style: string;

@@ -2,15 +2,6 @@
 @use '../1-base/boxshadow' as b;
 @use '../1-base/breakpoints' as bp;
 
-@mixin button-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 .btn {
   border: 2px solid transparent;
   display: flex;
@@ -23,7 +14,7 @@
   padding: .75em 1.5em;
   cursor: pointer;
 
-  &:hover {
+  &:hover, &:active {
     background-color: var(--colorSecondary);
     opacity: .9;
   }
@@ -50,7 +41,8 @@
   position: relative;
   cursor: pointer;
 
-  &:hover:before, &:hover:after {
+  &:hover:before, &:hover:after,
+  &:active:before, &:active:after{
     background-color: var(--colorOnOther);
   }
 

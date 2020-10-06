@@ -1,4 +1,3 @@
-import { Button } from "@components/Button/Button";
 import * as React from "react";
 import Head from 'next/head'
 

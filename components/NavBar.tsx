@@ -10,12 +10,16 @@ const NavBar = () => {
   return (
     <nav role="navigation" className={`${styles.navbar} ${styles[menuOpen]}`}>
       <ul className={`${styles.overlay} ${styles[menuOpen]}`}>
-        <Link  href="/">
-          <a className={styles.link} onClick={clickOut}>Home</a>
-        </Link>
-        <Link  href="/about" >
-          <a className={styles.link} onClick={clickOut}>About</a>
-        </Link>
+        <li className={styles['nav-item']}>
+          <Link href="/">
+            <a className={styles.link} onClick={clickOut}>Home</a>
+          </Link>
+        </li>
+        <li className={styles['nav-item']}>
+          <Link href="/about" >
+            <a onClick={clickOut}>About</a>
+          </Link>
+        </li>
       </ul>
       <Button
         id='menu-toggle'

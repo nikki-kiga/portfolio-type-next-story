@@ -1,5 +1,4 @@
 @use '../1-base/breakpoints' as bp;
-
 .navbar {
   display: flex;
 }
@@ -19,10 +18,10 @@
   visibility: hidden;
   transition: .5s ease;
 
-  a {
+  .nav-item {
     visibility: hidden;
     margin: auto;
-    &:after {
+    a:after {
       content: "";
       position: absolute;
       height: 2px;
@@ -33,7 +32,7 @@
       transition: 0.4s cubic-bezier(.45,.03,.50,.95);
     }
   
-    &:hover:after {
+    a:hover:after, a:active:after {
       width: 100%;
       transition: 0.4s cubic-bezier(.45,.03,.50,.95);
     }
@@ -42,19 +41,34 @@
   @include bp.mq('large', min) {
     position: relative;
     opacity: 1;
-    display: flex;
+    display: block;
     flex-direction: row;
-    a {
-      display: inline-block;
-      visibility: visible;
-      &:after {
-        width: 100%;
-        background:red;
-      }
 
-      &:hover:after {
-        width: 100%;
-        transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+    .nav-item {
+      display: inline-block;
+      margin: 0.5em 1.5em;
+      visibility: visible;
+      a {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 0;
+          bottom: -4px;
+          left: 0;
+          background: var(--colorHighlight);
+          transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+        }
+
+        &:hover, &:active {
+          color: var(--colorOnSurface);
+
+          &:after {
+            width: 100%;
+            transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+          }
+        }
       }
     }
   }
@@ -66,14 +80,14 @@ ul.menu-active {
   opacity: 1;
   visibility: visible;
   transition: .5s ease;
-}
 
-.menu-active a {
-  display: block;
-  color: var(--colorContrast);
-  margin: auto;
-  visibility: visible;
-  text-transform: uppercase;
-  position: relative;
-  letter-spacing: 2px;
+  .nav-item {
+    display: block;
+    position: relative;
+    color: var(--colorContrast);
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    visibility: visible;
+  }
 }

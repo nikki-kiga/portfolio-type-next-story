@@ -1,9 +1,12 @@
 @use '../1-base/boxshadow' as b;
+@use '../1-base/breakpoints' as bp;
+@use '../1-base/fonts' as f;
 
 .header {
   padding: 1em;
   background-color: var(--colorMid);
   @include b.elevation-5(black);
+  @include f.responsive-font(2vw, 20px, 32px, 24px);
 }
 
 .header-wrapper {

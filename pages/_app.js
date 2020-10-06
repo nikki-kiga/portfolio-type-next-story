@@ -1,5 +1,4 @@
-import '../styles/1-base/_base.scss';
-
+import '../styles/global/global.css';
 import React from 'react';
 import App from 'next/app';
 

@@ -1,9 +1,3 @@
-@use '../1-base/accessibility';
-
 .layout {
   background: var(--colorSurface);
-}
-
-.visually-hidden {
-  @extend .visually-hidden;
 }
