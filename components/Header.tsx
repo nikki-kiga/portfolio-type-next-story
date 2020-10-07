@@ -8,7 +8,7 @@ const Header = () => {
   const { theme, toggle } = useTheme();
   const darkOn = theme === 'dark' ? false : true;
   return (
-    <header className={styles.header}>
+    <header id="header" className={styles.header}>
       <div className={`${styles['header-wrapper']}`}>
         <div className={styles.logo}>
           <div className={styles.titleMain}>

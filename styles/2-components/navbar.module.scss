@@ -21,20 +21,34 @@
   .nav-item {
     visibility: hidden;
     margin: auto;
-    a:after {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 0;
-      bottom: -4px;
-      left: 0;
-      background: var(--colorHighlight);
-      transition: 0.4s cubic-bezier(.45,.03,.50,.95);
-    }
-  
-    a:hover:after, a:active:after {
-      width: 100%;
-      transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+    a {
+      color: var(--colorOnSurface);
+      filter: brightness(70%);
+      transition: .2s;
+      font-size: 2rem;
+      &:hover, 
+      &:active {
+        color: var(--colorOnSurface);
+        filter: brightness(100%);
+        transition: .2s;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 0;
+        bottom: -4px;
+        left: 0;
+        background: var(--colorHighlight);
+        transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+      }
+    
+      &:hover:after, 
+      &:active:after {
+        width: 100%;
+        transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+      }
     }
   }
 
@@ -61,7 +75,8 @@
           transition: 0.4s cubic-bezier(.45,.03,.50,.95);
         }
 
-        &:hover, &:active {
+        &:hover, 
+        &:active {
           color: var(--colorOnSurface);
 
           &:after {

@@ -1,4 +1,4 @@
-import '../styles/global/global.css';
+import '../styles/global/global.scss';
 import React from 'react';
 import App from 'next/app';
 

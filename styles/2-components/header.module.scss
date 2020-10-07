@@ -5,6 +5,7 @@
 .header {
   padding: 1em;
   background-color: var(--colorMid);
+
   @include b.elevation-5(black);
   @include f.responsive-font(2vw, 20px, 32px, 24px);
 }
@@ -38,8 +39,10 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  color: var(--colorOnSurface);
   border: 2px solid var(--colorOnSurface);
   border-radius: 1px;
+  filter: brightness(95%);
   @include b.elevation-1(black);
 }
 

@@ -11,9 +11,9 @@ const Layout = ({children}) => {
         Skip to main content
       </a>
       <Header></Header>
-        <main id="main-content">
-          {children}
-        </main>
+      <main id="main-content" className={styles.main}>
+        {children}
+      </main>
       <Footer></Footer>
    </div>
  )
