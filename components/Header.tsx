@@ -1,7 +1,7 @@
 import * as React from 'react';
 import NavBar from './NavBar'
 import Toggle from './Toggle'
-import {useTheme } from 'providers/ThemeProvider'
+import { useTheme } from '../providers/ThemeProvider'
 import styles from '../styles/2-components/header.module.scss';
 
 const Header = () => {
