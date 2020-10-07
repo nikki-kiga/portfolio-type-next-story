@@ -7,7 +7,7 @@ $breakpoints: (
   xlarge: 1200,
 );
 
-@mixin breakpoint($breakpoint, $direction) {
+@mixin mq($breakpoint, $direction) {
   @if map-has-key($breakpoints, $breakpoint) {
     $breakpoint-value: map-get($breakpoints, $breakpoint);
     
