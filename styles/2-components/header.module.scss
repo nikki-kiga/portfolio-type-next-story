@@ -4,8 +4,9 @@
 
 .header {
   padding: 1em;
+  width: 100%;
   background-color: var(--colorMid);
-
+  position:fixed;
   @include b.elevation-5(black);
   @include f.responsive-font(2vw, 20px, 32px, 24px);
 }
