@@ -3,9 +3,9 @@ import { mount } from "enzyme";
 import Home from "../../pages/index";
 describe("Pages", () => {
   describe("Home", () => {
-    it("should render without throwing an error", function () {
+    it("Should render with home page", function () {
       const wrap = mount(<Home />);
-      expect(wrap.find("h1").text()).toBe("Welcome to My Next App!");
+      expect(wrap.find("h1").text()).toBe("Home Page");
     });
   });
 });

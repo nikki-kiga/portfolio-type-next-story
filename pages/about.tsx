@@ -1,18 +1,20 @@
-import * as React from "react";
-import Head from 'next/head'
+import Head from 'next/head';
+import React from 'react';
 
 import Layout from '../components/Layout'
 
-const Home = () => {
+const About = () => {
   return (
     <Layout>
       <Head>
-        <title>Template Typescript Next Project</title>
+        <title>About Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
-      <h1>Home Page</h1>
+      <p>
+        This is the about page!
+      </p>
     </Layout>
   )
 };
 
-export default Home;
+export default About;

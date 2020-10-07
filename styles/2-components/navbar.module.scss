@@ -1,54 +1,108 @@
+@use '../1-base/breakpoints' as bp;
 .navbar {
-  margin-left: 1rem;
   display: flex;
 }
 
 .overlay {
   position: fixed;
-  height: 100%;
+  height: 0%;
   width: 100%;
+  top: 0;
   left: 0;
-  margin: 0;
   opacity: 0;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  background: var(--colorSecondary);
-  visibility: none;
+  background: var(--colorMid);
+  visibility: hidden;
   transition: .5s ease;
+
+  .nav-item {
+    visibility: hidden;
+    margin: auto;
+    a {
+      color: var(--colorOnSurface);
+      filter: brightness(70%);
+      transition: .2s;
+      font-size: 2rem;
+      &:hover, 
+      &:active {
+        color: var(--colorOnSurface);
+        filter: brightness(100%);
+        transition: .2s;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 0;
+        bottom: -4px;
+        left: 0;
+        background: var(--colorHighlight);
+        transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+      }
+    
+      &:hover:after, 
+      &:active:after {
+        width: 100%;
+        transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+      }
+    }
+  }
+
+  @include bp.mq('large', min) {
+    position: relative;
+    opacity: 1;
+    display: block;
+    flex-direction: row;
+
+    .nav-item {
+      display: inline-block;
+      margin: 0.5em 1.5em;
+      visibility: visible;
+      a {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 0;
+          bottom: -4px;
+          left: 0;
+          background: var(--colorHighlight);
+          transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+        }
+
+        &:hover, 
+        &:active {
+          color: var(--colorOnSurface);
+
+          &:after {
+            width: 100%;
+            transition: 0.4s cubic-bezier(.45,.03,.50,.95);
+          }
+        }
+      }
+    }
+  }
 }
 
 ul.menu-active {
+  height: 100%;
+  width: 100%;
   opacity: 1;
   visibility: visible;
   transition: .5s ease;
-}
 
-.overlay a {
-  display: block;
-  color: var(--colorContrast);
-  margin: auto;
-  text-transform: uppercase;
-  position: relative;
-  letter-spacing: 2px;
+  .nav-item {
+    display: block;
+    position: relative;
+    color: var(--colorContrast);
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    visibility: visible;
+  }
 }
-.overlay a:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0;
-  bottom: -4px;
-  left: 0;
-  background: var(--colorHighlight);
-  transition: 0.4s cubic-bezier(.45,.03,.50,.95);
-}
-
-.overlay a:hover:after {
-  width: 100%;
-  transition: 0.4s cubic-bezier(.45,.03,.50,.95);
-}
-
-.menu-active > button {
-  content: "Close"
-}
-
