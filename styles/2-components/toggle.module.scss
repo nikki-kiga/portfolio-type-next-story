@@ -1,5 +1,5 @@
 /*Styling references code from aliceyt on prototypr*/
-@use '../1-base/boxshadow' as b;
+@import '../1-base/boxshadow';
 
 .toggle {
   margin: 0 2em;
@@ -24,7 +24,7 @@
     border-radius: 2em;
     transition: all ease-in-out .3s;
     background-color: #f2f2f2;
-    @include b.elevation-1(black); 
+    @include elevation-1(black); 
   }
 
   &:checked:before {

@@ -1,6 +1,5 @@
-@use '../1-base/sizes' as sizes;
-@use '../1-base/boxshadow' as b;
-@use '../1-base/breakpoints' as bp;
+@import '../1-base/boxshadow';
+@import '../1-base/breakpoints';
 
 .btn {
   border: 2px solid transparent;
@@ -53,7 +52,7 @@
     width: 2rem;
     height: 2px;
     transition: .2s;
-    @include b.elevation-2(black);
+    @include elevation-2(black);
 
   }
 
@@ -65,7 +64,7 @@
     top: 1.2rem;
   }
 
-  @include bp.mq('large', min) {
+  @include mq('large', min) {
     display: none;
   }
 }

@@ -1,14 +1,14 @@
-@use '../1-base/boxshadow' as b;
-@use '../1-base/breakpoints' as bp;
-@use '../1-base/fonts' as f;
+@import '../1-base/boxshadow';
+@import '../1-base/breakpoints';
+@import '../1-base/fonts';
 
 .header {
   padding: 1em;
   width: 100%;
   background-color: var(--colorMid);
   position:fixed;
-  @include b.elevation-5(black);
-  @include f.responsive-font(2vw, 20px, 32px, 24px);
+  @include elevation-5(black);
+  @include responsive-font(2vw, 20px, 32px, 24px);
 }
 
 .header-wrapper {
@@ -44,7 +44,7 @@
   border: 2px solid var(--colorOnSurface);
   border-radius: 1px;
   filter: brightness(95%);
-  @include b.elevation-1(black);
+  @include elevation-1(black);
 }
 
 .titleMain > span {
