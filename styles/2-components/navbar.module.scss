@@ -52,7 +52,7 @@
     }
   }
 
-  @include bp.mq('large', min) {
+  @include mq('large', min) {
     position: relative;
     opacity: 1;
     display: block;
