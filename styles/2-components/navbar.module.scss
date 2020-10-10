@@ -21,6 +21,7 @@
   .nav-item {
     visibility: hidden;
     margin: auto;
+    text-transform: uppercase;
     a {
       color: var(--colorOnSurface);
       filter: brightness(70%);
@@ -101,7 +102,6 @@ ul.menu-active {
     position: relative;
     color: var(--colorContrast);
     margin: auto;
-    text-transform: uppercase;
     letter-spacing: 2px;
     visibility: visible;
   }

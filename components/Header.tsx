@@ -24,8 +24,14 @@ const Header = () => {
             onChange={() => toggle()} 
             style = 'toggle' 
             label='Dark Mode' 
-            checked={darkOn}/>
-          <NavBar/>
+            checked={darkOn}
+          />
+          <NavBar 
+            links={[
+              {pathName: 'Home', path: '/'},
+              {pathName: 'About', path: '/about'}
+            ]}
+          />
         </div>
       </div>
     </header>
