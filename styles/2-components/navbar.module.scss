@@ -24,13 +24,12 @@
     text-transform: uppercase;
     a {
       color: var(--colorOnSurface);
-      filter: brightness(70%);
       transition: .2s;
       font-size: 2rem;
       &:hover, 
       &:active {
         color: var(--colorOnSurface);
-        filter: brightness(100%);
+        filter: brightness(110%) saturate(100%);
         transition: .2s;
       }
 

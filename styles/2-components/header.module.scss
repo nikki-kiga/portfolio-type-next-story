@@ -6,7 +6,7 @@
   padding: 1em;
   width: 100%;
   background-color: var(--colorMid);
-  position:fixed;
+  position:sticky;
   @include elevation-5(black);
   @include responsive-font(2vw, 20px, 32px, 24px);
 }
