@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "../Button/Button";
+import Toggle from "../Toggle";
 import renderer from "react-test-renderer";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<Button id="test-button" onClick={() => {}} style='test' />).toJSON();
+  const tree = renderer.create(<Toggle onChange={ jest.fn()} style='test'/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

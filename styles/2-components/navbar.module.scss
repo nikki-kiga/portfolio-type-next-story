@@ -1,4 +1,4 @@
-@use '../1-base/breakpoints' as bp;
+@import '../1-base/breakpoints';
 .navbar {
   display: flex;
 }
@@ -21,15 +21,15 @@
   .nav-item {
     visibility: hidden;
     margin: auto;
+    text-transform: uppercase;
     a {
       color: var(--colorOnSurface);
-      filter: brightness(70%);
       transition: .2s;
       font-size: 2rem;
       &:hover, 
       &:active {
         color: var(--colorOnSurface);
-        filter: brightness(100%);
+        filter: brightness(110%) saturate(100%);
         transition: .2s;
       }
 
@@ -52,7 +52,7 @@
     }
   }
 
-  @include bp.mq('large', min) {
+  @include mq('large', min) {
     position: relative;
     opacity: 1;
     display: block;
@@ -101,7 +101,6 @@ ul.menu-active {
     position: relative;
     color: var(--colorContrast);
     margin: auto;
-    text-transform: uppercase;
     letter-spacing: 2px;
     visibility: visible;
   }
