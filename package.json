@@ -17,6 +17,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-react-app": "^9.1.2",
     "css-loader": "^4.3.0",
+    "framer-motion": "^2.9.4",
     "jest-css-modules-transform": "^4.0.1",
     "locomotive-scroll": "^3.6.1",
     "next": "9.5.3",

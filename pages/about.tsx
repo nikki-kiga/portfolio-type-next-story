@@ -3,6 +3,7 @@ import React from 'react';
 import HeadTags from '../components/HeadTags'
 
 import Layout from '../components/Layout'
+import Splash from '../components/Splash'
 
 const About = () => {
   return (
@@ -15,6 +16,7 @@ const About = () => {
       </Head>
       <p id='initial'>
         This is the about page!
+        <Splash/>
       </p>
     </Layout>
   )
