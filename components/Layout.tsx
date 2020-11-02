@@ -1,12 +1,12 @@
-import * as React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import * as React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 import styles from '../styles/3-Layout/layout.module.scss';
 
-const Layout = ({children}) => {
- return (
-   <div className={styles.layout}>
+const Layout = ({ children }) => {
+  return (
+    <div className={styles.layout}>
       <a className={'visually-hidden'} href="#main-content">
         Skip to main content
       </a>
@@ -15,9 +15,8 @@ const Layout = ({children}) => {
         {children}
       </main>
       <Footer></Footer>
-   </div>
- )
-}
+    </div>
+  );
+};
 
-export default Layout
-
+export default Layout;

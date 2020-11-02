@@ -1,7 +1,7 @@
 import * as React from 'react';
-import NavBar from './NavBar'
-import Toggle from './Toggle'
-import { useTheme } from '../providers/ThemeProvider'
+import NavBar from './NavBar';
+import Toggle from './Toggle';
+import { useTheme } from '../providers/ThemeProvider';
 import styles from '../styles/2-components/header.module.scss';
 
 const Header = () => {
@@ -20,22 +20,22 @@ const Header = () => {
           <span className={styles.titleSub}></span>
         </div>
         <div className={styles.controls}>
-          <Toggle 
-            onChange={() => toggle()} 
-            style = 'toggle' 
-            label='Dark Mode' 
+          <Toggle
+            onChange={() => toggle()}
+            style="toggle"
+            label="Dark Mode"
             checked={darkOn}
           />
-          <NavBar 
+          <NavBar
             links={[
-              {pathName: 'Home', path: '/'},
-              {pathName: 'About', path: '/about'}
+              { pathName: 'Home', path: '/' },
+              { pathName: 'About', path: '/about' },
             ]}
           />
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

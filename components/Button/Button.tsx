@@ -12,16 +12,33 @@ export interface Props {
   children?: any;
 }
 
-const Button = ({label, id, onClick, style, extraStyle = '', disabled = false, level = 'primary', children} : Props) => {
+const Button = ({
+  label,
+  id,
+  onClick,
+  style,
+  extraStyle = '',
+  disabled = false,
+  level = 'primary',
+  children,
+}: Props) => {
   const levelStyle = level === 'primary' ? styles.primary : styles.secondary;
   return (
-    <button className={`${styles.btn} ${levelStyle} ${styles[style]} ${styles[extraStyle]}`} 
+    <button
+      className={`${styles.btn} ${levelStyle} ${styles[style]} ${styles[extraStyle]}`}
       id={id}
-      onClick={!disabled ? onClick : () => {}}>
+      onClick={
+        !disabled
+          ? onClick
+          : () => {
+              console.log('button clicked');
+            }
+      }
+    >
       {children}
       {label}
     </button>
-  ) 
-}
+  );
+};
 
 export default Button;

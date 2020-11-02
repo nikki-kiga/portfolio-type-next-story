@@ -10,11 +10,11 @@ export default class MyApp extends App {
     const { Component, pageProps, router } = this.props;
     return (
       <div>
-      <ThemeProvider>
-        {/* <AnimatePresence exitBeforeEnter> */}
-          <Component {...pageProps} key={router.route} />
-        {/* </AnimatePresence> */}
-      </ThemeProvider>
+        <ThemeProvider>
+          <AnimatePresence initial={false} exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+        </ThemeProvider>
       </div>
     );
   }
