@@ -6,15 +6,17 @@ import styles from '../styles/3-Layout/layout.module.scss';
 
 const Layout = ({ children }) => {
   return (
-    <div className={styles.layout}>
+    <div className={styles['page-container']}>
       <a className={'visually-hidden'} href="#main-content">
         Skip to main content
       </a>
-      <Header></Header>
-      <main id="main-content" className={styles.main}>
-        {children}
-      </main>
-      <Footer></Footer>
+      <div className={styles['content-wrap']}>
+        <Footer />
+        <Header />
+        <main id="main-content" className={styles.main}>
+          {children}
+        </main>
+      </div>
     </div>
   );
 };

@@ -22,10 +22,17 @@
     visibility: hidden;
     margin: auto;
     text-transform: uppercase;
-    a {
+    button {
+      font: inherit;
       color: var(--colorOnSurface);
       transition: .2s;
       font-size: 2rem;
+      background-color: inherit;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
       &:hover, 
       &:active {
         color: var(--colorOnSurface);
@@ -62,7 +69,7 @@
       display: inline-block;
       margin: 0.5em 1.5em;
       visibility: visible;
-      a {
+      button {
         position: relative;
         &:after {
           content: "";

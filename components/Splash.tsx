@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useViewportScroll } from 'framer-motion';
 
+
 const Splash = () => {
   const { scrollYProgress } = useViewportScroll();
   const variants = {

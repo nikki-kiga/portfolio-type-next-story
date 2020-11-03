@@ -19,27 +19,29 @@ const Footer = () => {
       </ul>
       <ul className={styles.socials}>
         <li>
-          <a href="/" className="fa fa-twitter">
-            Twitter
+          <a href="/" aria-label="Twitter">
+            <i className="fa fa-twitter" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/" className="fa fa-dribbble">
-            Dribbble
+          <a href="/" aria-label="Dribble">
+            <i className="fa fa-dribbble" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/" className="fa fa-instagram" aria-label="instagram link">
-            Instagram
+          <a href="/" aria-label="Instagram">
+            <i className="fa fa-instagram" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a href="/" className="fa fa-linkedin">
-            LinkedIn
+          <a href="/" aria-label="LinkedIn">
+            <i className="fa fa-linkedin" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <p className={styles.credits}>© Nikki Kiga 2020</p>
+      <p className={styles.credits}>
+        <div>© Nikki Kiga 2020</div>
+      </p>
     </footer>
   );
 };
