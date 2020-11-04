@@ -19,7 +19,6 @@ const About = (): JSX.Element => {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           ></link>
-          <HeadTags />
         </Head>
         <section className={`${styles.section} ${styles['split-section']}`}>
           <motion.div className={styles.card}>

@@ -2,9 +2,9 @@ import * as React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import styles from '../styles/3-Layout/layout.module.scss';
+import styles from '../styles/3-layout/layout.module.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }): JSX.Element => {
   return (
     <div className={styles['page-container']}>
       <a className={'visually-hidden'} href="#main-content">
