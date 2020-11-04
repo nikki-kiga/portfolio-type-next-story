@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import Image from '../components/Image';
 
-import styles from '../styles/3-layout/page.module.scss';
+import styles from '../styles/2-components/page.module.scss';
 
 const transition = { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.9] };
 const defaultHover = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };

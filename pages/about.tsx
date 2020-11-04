@@ -6,7 +6,7 @@ import HeadTags from '../components/HeadTags';
 import Layout from '../components/Layout';
 import Splash from '../components/Splash';
 import { motion } from 'framer-motion';
-import styles from '../styles/3-layout/page.module.scss';
+import styles from '../styles/2-components/page.module.scss';
 
 const About = (): JSX.Element => {
   return (
