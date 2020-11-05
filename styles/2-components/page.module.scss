@@ -10,12 +10,12 @@
 }
 
 .splash-text{
-  @include responsive-font(12vw, 80px, 300px, 100px);
+  @include responsive-font(20vw, 80px, 350px, 250px);
   font-family: var(--fontSplash);
-  font-weight: 100;
+  // font-weight: 300;
   color: var(--colorOnSurface);
-  letter-spacing: 6vw;
-  text-transform: uppercase;
+  // letter-spacing: 6vw;
+  // text-transform: uppercase;
   text-align: center;
 }
 
