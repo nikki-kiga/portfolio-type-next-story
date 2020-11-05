@@ -1,0 +1,16 @@
+.page-container {
+  background: var(--colorSurface);
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  height: inherit;
+  min-height: 100%;
+
+  .main {
+    flex: 1 1 auto;
+    display: flex;
+    padding-bottom: 20px;
+  }
+}

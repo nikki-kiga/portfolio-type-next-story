@@ -1,23 +1,24 @@
-import * as React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import * as React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
-import styles from '../styles/3-Layout/layout.module.scss';
+import styles from '../styles/2-components/layout.module.scss';
 
-const Layout = ({children}) => {
- return (
-   <div className={styles.layout}>
+const Layout = ({ children }): JSX.Element => {
+  return (
+    <div className={styles['page-container']}>
       <a className={'visually-hidden'} href="#main-content">
         Skip to main content
       </a>
-      <Header></Header>
-      <main id="main-content" className={styles.main}>
-        {children}
-      </main>
-      <Footer></Footer>
-   </div>
- )
-}
+      <div className={styles['content-wrap']}>
+        <Footer />
+        <Header />
+        <main id="main-content" className={styles.main}>
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+};
 
-export default Layout
-
+export default Layout;
