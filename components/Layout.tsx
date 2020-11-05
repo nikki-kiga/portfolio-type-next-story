@@ -2,7 +2,7 @@ import * as React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import styles from '../styles/3-layout/layout.module.scss';
+import styles from '../styles/2-components/layout.module.scss';
 
 const Layout = ({ children }): JSX.Element => {
   return (
