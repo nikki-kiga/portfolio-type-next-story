@@ -1,23 +1,49 @@
 @import '../1-base/fonts';
+@import '../1-base/breakpoints';
 
 
 .section {
-  height: inherit;
-  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
   color: var(--colorOnSurface);
   background: var(--colorSurface);
-  background: red;
 }
 
-.splash-text{
-  @include responsive-font(20vw, 80px, 350px, 250px);
-  font-family: var(--fontSplash);
-  // font-weight: 300;
-  color: var(--colorOnSurface);
-  // letter-spacing: 6vw;
-  // text-transform: uppercase;
-  text-align: center;
+.splash {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .splash-image {
+    max-width: 850px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+  .splash-text{
+    position: absolute;
+    display: block;
+    @include responsive-font(20vw, 120px, 275px, 200px);
+    font-family: var(--fontSplash);
+    color: var(--colorOnSurface);
+    text-align: center;
+    background: none;
+
+    .text-first {
+      top: 0;
+      text-align: center;
+    }
+    .text-second {
+      bottom: 0;
+    }
+  }
+
+  @include mq('large', min) {
+  }
 }
+
+
 
 .split-section {
   display: grid;

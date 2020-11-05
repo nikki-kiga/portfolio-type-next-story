@@ -23,7 +23,7 @@
     height: 2em;
     border-radius: 2em;
     transition: all ease-in-out .3s;
-    background-color: #f2f2f2;
+    background-color: var(--colorMid);
     @include elevation-1(black); 
   }
 

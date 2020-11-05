@@ -11,11 +11,11 @@ const Layout = ({ children }): JSX.Element => {
         Skip to main content
       </a>
       <div className={styles['content-wrap']}>
-        <Footer />
         <Header />
         <main id="main-content" className={styles.main}>
           {children}
         </main>
+        <Footer />
       </div>
     </div>
   );

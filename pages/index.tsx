@@ -2,9 +2,11 @@ import * as React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
-import Image from '../components/Image';
+import { ImageSet } from 'caravaggio-react';
+import sourceSet from '../components/sourceSet';
 
 import styles from '../styles/2-components/page.module.scss';
+import ImageOpt from '@components/ImageOpt';
 
 const transition = { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.9] };
 const defaultHover = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -18,6 +20,11 @@ const Home = (): JSX.Element => {
           name="description"
           content="The home page for XX. Learn more about YY."
         ></meta>
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+          key="viewport"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,14 +33,16 @@ const Home = (): JSX.Element => {
       <div className={styles.sections}>
         <section className={`${styles.section} ${styles['splash']}`}>
           <h1 className={styles['splash-text']}>
-            <span className={styles['tone-down']}>Nikki Kiga</span>
+            <span className={styles['text-first']}>Nikki</span>
+            <span className={styles['text-second']}>Kiga</span>
           </h1>
-          <img
-            // exit={{ opacity: 0 }}
-            // transition={transition}
-            src="/bubbles-bright.jpg"
-            alt="colliding water droplets"
-          />
+          <div className={styles['splash-image']}>
+            <ImageOpt
+              url={
+                'https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/bubbles-bright_kvuxxe.jpg'
+              }
+            />
+          </div>
         </section>
         <section className={`${styles.section} ${styles.duoHighlight}`}>
           <p>
