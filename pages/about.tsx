@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import Head from 'next/head';
 import React from 'react';
-import HeadTags from '../components/HeadTags';
 
 import Layout from '../components/Layout';
 import Splash from '../components/Splash';

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Head from 'next/head';
-import HeadTags from '../components/HeadTags';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import Image from '../components/Image';
