@@ -26,9 +26,9 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.credits}>
-        <div>© Nikki Kiga 2020</div>
-      </p>
+      <div className={styles.credits}>
+        <span>© Nikki Kiga 2020</span>
+      </div>
     </footer>
   );
 };

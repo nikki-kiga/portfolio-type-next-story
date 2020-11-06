@@ -30,7 +30,7 @@
 .credits {
   @include responsive-font(2vw, 10px, 20px, 12px);
   
-   div {
+   span {
      filter: brightness(50%);
      color: var(--colorOnSurface);
   }

@@ -4,45 +4,67 @@
 
 .section {
   min-height: 100vh;
-  width: 100vw;
   color: var(--colorOnSurface);
   background: var(--colorSurface);
 }
 
-.splash {
-  position: relative;
-  display: flex;
+.first-section {
   align-items: center;
+  display: flex;
 
-  .splash-image {
-    max-width: 850px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
-  }
-
-  .splash-text{
-    position: absolute;
-    display: block;
-    @include responsive-font(20vw, 120px, 275px, 200px);
+  .splash {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
     font-family: var(--fontSplash);
     color: var(--colorOnSurface);
-    text-align: center;
     background: none;
+    @include responsive-font(15vw, 80px, 180px, 160px);
 
+  }
+
+  .splash-image-wrapper {
+    width: 100vw;
+    .splash-image {
+      width: 70vw;
+      max-width: 850px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .text-first {
+    left: 50%;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    filter: brightness(95%);
+    transform: translate(-50%, -50%);
+  }
+  .text-second {
+    filter: brightness(90%);
+    z-index: 50;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  @media (min-width: 905px) {
+    
     .text-first {
       top: 0;
-      text-align: center;
+      right: 50%;
+      transform: translate(-450px, -50%);
     }
     .text-second {
       bottom: 0;
+      left: 50%;
+      transform: translate(100px, 50%);
     }
   }
 
-  @include mq('large', min) {
-  }
 }
-
 
 
 .split-section {
