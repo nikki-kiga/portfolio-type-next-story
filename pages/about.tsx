@@ -9,6 +9,11 @@ import { motion } from 'framer-motion';
 import styles from '../styles/2-components/page.module.scss';
 
 const About = (): JSX.Element => {
+  const vidRef = React.useRef(null);
+  const handlePlayVideo = () => {
+    vidRef.current.paused ? vidRef.current.play() : vidRef.current.pause();
+  };
+
   return (
     <motion.div exit={{ opacity: 0 }}>
       <Layout>
@@ -26,32 +31,33 @@ const About = (): JSX.Element => {
           ></link>
         </Head>
         <section className={`${styles.section} ${styles['split-section']}`}>
-          <motion.div className={styles.card}>
+          <motion.div className={`${styles.card} ${styles.first}`}>
             <h2 className={styles['section-title']}>
               <span>software. </span>
               <span>design. </span>
               <span>animation. </span>
             </h2>
-            <p>
+            <p className={styles['card-details']}>
               Developing digital experiences that are rooted in embracing
               curiosity, inclusion, and transparency.
             </p>
+            <img src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/cylinders_ujuca5.png" alt="pink cylinders" />
           </motion.div>
           <motion.div className={styles.card} exit={{ opacity: 0 }}>
-            {/* <video>
-              <source
-                src="https://res.cloudinary.com/my_cloud/video/upload/g_north,l_text:arial_60:watchme,y_20/watchme.webm"
-                type="video/webm"
-              />
-              <source
-                src="https://res.cloudinary.com/dsnywj1pi/video/upload/v1604452951/Portfolio/hookClamp_kmteuy.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://res.cloudinary.com/my_cloud/video/upload/g_north,l_text:arial_60:watchme,y_20/watchme.ogv"
-                type="video/ogg"
-              />
-            </video> */}
+            <div className={styles.vidFrame}>
+              <video
+                className={styles.highlightReel}
+                ref={vidRef}
+                loop
+                autoPlay
+                onClick={handlePlayVideo}
+              >
+                <source
+                  src="https://res.cloudinary.com/dsnywj1pi/video/upload/v1604452951/Portfolio/hookClamp_kmteuy.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
           </motion.div>
         </section>
       </Layout>

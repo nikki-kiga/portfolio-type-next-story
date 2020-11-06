@@ -3,10 +3,10 @@
 // module.exports = withOptimizedImages({
 //   handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
 // });
-// const withImages = require('next-images');
+const withImages = require('next-images');
 
-// module.exports = withImages({
-//   images: {
-//     domains: ['res.cloudinary.com'],
-//   },
-// });
+module.exports = withImages({
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
+});

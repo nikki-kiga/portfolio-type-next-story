@@ -19,16 +19,14 @@
   transition: .5s ease;
 
   .nav-item {
+    font-family: var(--fontBody);
     visibility: hidden;
-    text-transform: uppercase;
     button {
       font: inherit;
       color: var(--colorOnSurface);
       transition: .2s;
       font-size: 2rem;
       background-color: inherit;
-      text-transform: uppercase;
-      letter-spacing: 2px;
       border: none;
       padding: 0;
       cursor: pointer;

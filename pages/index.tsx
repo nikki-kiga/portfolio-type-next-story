@@ -68,17 +68,10 @@ const Home = (): JSX.Element => {
               >
                 <div className={styles['splash-image']}>
                   {theme === 'light' ? (
-                    <ImageOpt
-                      url={
-                        'https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/bubbles-bright_kvuxxe.jpg'
-                      }
-                    />
+                    <img src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/bubbles-bright_kvuxxe.jpg" alt="bubbles colliding" />
+
                   ) : (
-                    <ImageOpt
-                      url={
-                        'https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452906/Portfolio/animGrowingCloner0028_dbbc6j.tiff'
-                      }
-                    />
+                    <img src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604645554/Portfolio/animGrowingCloner0028_jb6zad.jpg" alt="cloned bubble mesh" />
                   )}
                 </div>
               </motion.div>
@@ -91,13 +84,14 @@ const Home = (): JSX.Element => {
               adipisci error enim sequi omnis, veritatis odio inventore nulla
               vero itaque pariatur dolore? Aliquam!
             </p>
+            {/* <ImageOpt
+              url={
+                'https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/bubbles-bright_kvuxxe.jpg'
+              }
+            /> */}
             <img src="/grey-blob.png" alt="grey bubble" />
             <img src="/grey-mod.png" alt="grey bubble" />
             add animate into view
-          </section>
-          <section className={`${styles.section} ${styles.highlight}`}>
-            <img src="/cylinders.png" alt="pink cylinders" />
-            add animate when in view
           </section>
         </div>
       </motion.div>
