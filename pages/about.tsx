@@ -4,18 +4,21 @@ import React from 'react';
 // import Image from 'next/images';
 
 import Layout from '../components/Layout';
-import Splash from '../components/Splash';
 import { motion } from 'framer-motion';
 import styles from '../styles/2-components/about.module.scss';
 
 const About = (): JSX.Element => {
-  const vidRef = React.useRef(null);
+  const vidRef = React.useRef<HTMLVideoElement>(null);
   const handlePlayVideo = () => {
-    vidRef.current.paused ? vidRef.current.play() : vidRef.current.pause();
+    const node = vidRef.current;
+
+    if (node) {
+      node.paused ? node.play() : node.pause();
+    }
   };
 
   return (
-    <motion.div exit={{ opacity: 0 }}>
+    <motion.div initial="initial" animate="animate" exit="exit">
       <Layout>
         <Head>
           <title>About Page</title>
@@ -32,21 +35,18 @@ const About = (): JSX.Element => {
         </Head>
         <section className={`${styles.section} ${styles.about}`}>
           <div className={styles['split-section']}>
-            <motion.div className={`${styles.card} ${styles.firstCard}`}>
-              <h2 className={styles['section-title']}>
-                <span className={styles.header1}>software. </span>
-                <span className={styles.header2}>design. </span>
-                <span className={styles.header3}>animation. </span>
+            <div className={`${styles.card} ${styles.firstCard}`}>
+              <h2>
+                <span className={styles.header1}>software.</span>
+                <span className={styles.header2}>design.</span>
+                <span className={styles.header3}>animation.</span>
               </h2>
               <p className={styles['card-details']}>
                 Developing digital experiences that are rooted in embracing
                 curiosity, inclusion, and transparency.
               </p>
-            </motion.div>
-            <motion.div
-              className={`${styles.card} ${styles.vidFrame}`}
-              exit={{ opacity: 0 }}
-            >
+            </div>
+            <div className={`${styles.card} ${styles.vidFrame}`}>
               <video
                 className={styles.highlightReel}
                 ref={vidRef}
@@ -59,7 +59,7 @@ const About = (): JSX.Element => {
                   type="video/mp4"
                 />
               </video>
-            </motion.div>
+            </div>
           </div>
         </section>
       </Layout>

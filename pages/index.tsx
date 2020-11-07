@@ -98,7 +98,7 @@ const Home = (): JSX.Element => {
                     y: 0,
                     opacity: 1,
                     height: '100%',
-                    transition: { delay: 0.2, ...easeOutExpo },
+                    transition: { delay: 0.2, duration: 1.4, ...easeOutExpo },
                   }}
                 >
                   <div className={styles['splash-image']}>
