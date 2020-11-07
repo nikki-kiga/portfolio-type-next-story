@@ -1,22 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import styles from '../styles/2-components/footer.module.scss';
 
 const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
-      <ul className={styles.links}>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-      </ul>
       <ul className={styles.socials}>
         <li>
           <a href="/" aria-label="Twitter">
@@ -39,9 +26,9 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.credits}>
-        <div>© Nikki Kiga 2020</div>
-      </p>
+      <div className={styles.credits}>
+        <span>© Nikki Kiga 2020</span>
+      </div>
     </footer>
   );
 };

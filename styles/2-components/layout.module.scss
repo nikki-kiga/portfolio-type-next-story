@@ -7,10 +7,9 @@
 .content-wrap {
   height: inherit;
   min-height: 100%;
-
-  .main {
-    flex: 1 1 auto;
-    display: flex;
-    padding-bottom: 20px;
-  }
+  width: 100%;
+  position: absolute;
+  display: flex;
+  display: block;
+  overflow: auto;
 }
