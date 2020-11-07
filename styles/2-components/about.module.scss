@@ -22,8 +22,7 @@
 .card-details{
   display: flex;
   text-align: right;
-  margin: auto 0 auto .5rem;
-  // margin: auto;
+  margin: auto;
   grid-area: cardDeets;
   @include responsive-font(3vw, 16px, 50px, 18px);
 }
@@ -64,17 +63,16 @@
   grid-template-areas:
   "firstCard"  
   "vidFrame";
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
   grid-template-rows: 20% auto;
   grid-gap: 1rem;
 }
 
 @media (min-width: 930px) {
   .section-title {
-    min-height: 200px;
     display: grid;
-    grid-template-columns: 20px 1fr 80px;
-    grid-template-rows: minmax(80, 60, 40);
+    grid-template-columns: 12.5% 1fr 1fr;
+    grid-template-rows: 80px 60px auto;
 
     .header1 {
       grid-column-start: 1;
@@ -99,7 +97,7 @@
     "firstCard vidFrame";
     grid-template-columns: 50% 50%;
     grid-template-rows: minmax(500, auto);
-    grid-gap: 8px;
+    grid-gap: 0;
   }
   .vidFrame {
     width: 100%;
