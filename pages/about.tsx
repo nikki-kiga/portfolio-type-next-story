@@ -6,7 +6,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Splash from '../components/Splash';
 import { motion } from 'framer-motion';
-import styles from '../styles/2-components/page.module.scss';
+import styles from '../styles/2-components/about.module.scss';
 
 const About = (): JSX.Element => {
   const vidRef = React.useRef(null);
@@ -30,21 +30,23 @@ const About = (): JSX.Element => {
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           ></link>
         </Head>
-        <section className={`${styles.section} ${styles['split-section']}`}>
-          <motion.div className={`${styles.card} ${styles.first}`}>
-            <h2 className={styles['section-title']}>
-              <span>software. </span>
-              <span>design. </span>
-              <span>animation. </span>
-            </h2>
-            <p className={styles['card-details']}>
-              Developing digital experiences that are rooted in embracing
-              curiosity, inclusion, and transparency.
-            </p>
-            <img src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452873/Portfolio/cylinders_ujuca5.png" alt="pink cylinders" />
-          </motion.div>
-          <motion.div className={styles.card} exit={{ opacity: 0 }}>
-            <div className={styles.vidFrame}>
+        <section className={`${styles.section} ${styles.about}`}>
+          <div className={styles['split-section']}>
+            <motion.div className={`${styles.card} ${styles.firstCard}`}>
+              <h2 className={styles['section-title']}>
+                <span className={styles.header1}>software. </span>
+                <span className={styles.header2}>design. </span>
+                <span className={styles.header3}>animation. </span>
+              </h2>
+              <p className={styles['card-details']}>
+                Developing digital experiences that are rooted in embracing
+                curiosity, inclusion, and transparency.
+              </p>
+            </motion.div>
+            <motion.div
+              className={`${styles.card} ${styles.vidFrame}`}
+              exit={{ opacity: 0 }}
+            >
               <video
                 className={styles.highlightReel}
                 ref={vidRef}
@@ -57,8 +59,8 @@ const About = (): JSX.Element => {
                   type="video/mp4"
                 />
               </video>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </section>
       </Layout>
     </motion.div>

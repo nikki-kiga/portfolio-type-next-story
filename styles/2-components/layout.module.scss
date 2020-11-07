@@ -7,5 +7,9 @@
 .content-wrap {
   height: inherit;
   min-height: 100%;
+  width: 100%;
   position: absolute;
+  display: flex;
+  display: block;
+  overflow: auto;
 }
