@@ -32,14 +32,14 @@ module.exports = {
 
     // SCSS 
     newConfig.module.rules.push({
-      test: /\.(s*)css$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../styles/global.scss'),
+      test: /\.(sa|sc|c)ss$/,
+      use: ["style-loader", "css-loader", "sass-loader"]
     });
     
     // If you are using CSS Modules, check out the setup from Justin (justincy)
-    // Many thanks to Justin for the inspiration
+    // Many thanks to Trinity and Justin
     // https://gist.github.com/justincy/b8805ae2b333ac98d5a3bd9f431e8f70#file-next-preset-js
+    // Many thanks to https://github.com/storybookjs/storybook/issues/6055#issuecomment-521046352
 
     return newConfig;
   },

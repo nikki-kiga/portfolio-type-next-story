@@ -2,19 +2,19 @@ import * as React from 'react';
 import NavBar from './NavBar';
 import Toggle from './Toggle';
 import { useTheme } from '../providers/ThemeProvider';
-
 import styles from '../styles/2-components/header.module.scss';
 
-const Header = (): JSX.Element => {
+const StickyHeader = () => {
   const { theme, toggle } = useTheme();
   const darkOn = theme === 'dark' ? false : true;
   return (
-    <header className={styles.header}>
-      <div className={styles['header-content']}>
+    <header id="header" className={styles.header}>
+      <div className={`${styles['header-wrapper']}`}>
         <div className={styles.logo}>
           <div className={styles.titleMain}>
             <span>N</span>
-            <span>|</span>
+            <span>I</span>
+            <span>I</span>
             <span>K</span>
           </div>
           <span className={styles.titleSub}></span>
@@ -38,4 +38,4 @@ const Header = (): JSX.Element => {
   );
 };
 
-export default Header;
+export default StickyHeader;

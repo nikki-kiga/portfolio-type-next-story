@@ -3,15 +3,16 @@
 @import '../1-base/fonts';
 
 .header {
-  position: fixed;
-  z-index: 99;
+  margin: auto;
+  padding: 5px;
   width: 100%;
-  padding: 2rem;
-  color: var(--colorOnSurface);
-  @include responsive-font(2vw, 20px, 32px, 24px);
+  background-color: var(--colorMid);
+  position:sticky;
+  @include elevation-5(black);
+  @include responsive-font(2vw, 24px, 32px, 24px);
 }
 
-.header-content {
+.header-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,26 +30,34 @@
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+
 .titleMain {
+  width: 2.8em;
+  height: 2.8em;
   margin: auto;
   display: flex;
-  text-align: center;
+  flex-wrap: wrap;
   color: var(--colorOnSurface);
+  border: 2px solid var(--colorOnSurface);
+  border-radius: 1px;
   filter: brightness(95%);
-
-  span {
-    text-align: center;
-  }
+  @include elevation-1(black);
 }
 
 .titleMain > span {
   display: flex;
-  margin: 0 2px;
+  margin: auto;
+  height: 1em;
+  flex: 1 0 calc(50%);
   text-align: center;
   align-items: center;
   justify-content: center;
 
-  :nth-child(2) {
+  :nth-child(1),:nth-child(3), :nth-child(4) {
     font-weight: bold;
   }
 }

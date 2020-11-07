@@ -17,7 +17,14 @@ module.exports = {
   },
   setupFiles: ['<rootDir>/config/setup.js'],
   preset: 'ts-jest',
-  testPathIgnorePatterns: ['/.next/', '/node_modules/', '/lib/', '/tests/', '/coverage/', '/.storybook/'],
+  testPathIgnorePatterns: [
+    '/.next/',
+    '/node_modules/',
+    '/lib/',
+    '/tests/',
+    '/coverage/',
+    '/.storybook/',
+  ],
   testRegex: '(/__test__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   testURL: 'http://localhost',
   testEnvironment: 'jsdom',
@@ -25,9 +32,9 @@ module.exports = {
     // we must specify a custom tsconfig for tests because we need the typescript transform
     // to transform jsx into js rather than leaving it jsx such as the next build requires.  you
     // can see this setting in tsconfig.jest.json -> "jsx": "react"
-    "ts-jest": {
-      tsConfig: "tsconfig.jest.json"
-    }
+    'ts-jest': {
+      tsConfig: 'tsconfig.jest.json',
+    },
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   moduleNameMapper: {
@@ -42,6 +49,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
   },
   transformIgnorePatterns: [
-    '<rootDir>/node_modules/', 
-    '^.+\\.module\\.(css|sass|scss)$'],
+    '<rootDir>/node_modules/',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
 };

@@ -1,39 +1,36 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
 import styles from '../styles/2-components/footer.module.scss';
 
 const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
-      <ul className={styles.links}>
-        <li>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/about'>
-            <a>About</a>
-          </Link>
-        </li>
-      </ul>
       <ul className={styles.socials}>
         <li>
-          <a href="#" className="fa fa-twitter"></a>
+          <a href="/" aria-label="Twitter">
+            <i className="fa fa-twitter" aria-hidden="true"></i>
+          </a>
         </li>
         <li>
-          <a href="#" className="fa fa-dribbble"></a>
+          <a href="/" aria-label="Dribble">
+            <i className="fa fa-dribbble" aria-hidden="true"></i>
+          </a>
         </li>
         <li>
-          <a href="#" className="fa fa-instagram"></a>
+          <a href="/" aria-label="Instagram">
+            <i className="fa fa-instagram" aria-hidden="true"></i>
+          </a>
         </li>
         <li>
-          <a href="#" className="fa fa-linkedin"></a>
+          <a href="/" aria-label="LinkedIn">
+            <i className="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
         </li>
       </ul>
-      <p className={styles.credits}>© Nikki Kiga 2020</p>
+      <div className={styles.credits}>
+        <span>© Nikki Kiga 2020</span>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
