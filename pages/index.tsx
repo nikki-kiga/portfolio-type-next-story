@@ -9,39 +9,8 @@ import styles from '../styles/2-components/page.module.scss';
 import ImageOpt from '@components/ImageOpt';
 import { useTheme } from 'providers/ThemeProvider';
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
-const defaultHover = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 const easeOutExpoTransition = { duration: 1.4, ease: [0.16, 1, 0.3, 1] };
 const easeOutExpo = [0.16, 1, 0.3, 1];
-
-const staggerDir = () => {
-  return {
-    initial: { y: 0 },
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 0.6,
-        staggerChildren: 0.04,
-        staggerDirection: -1,
-      },
-    },
-  };
-};
-
-const fadeInFromRight = {
-  initial: {
-    height: 0,
-    opacity: 0,
-  },
-  animate: {
-    height: 100,
-    opacity: 1,
-    transition: {
-      duration: 1.4,
-      ease: easeOutExpo,
-    },
-  },
-};
 
 const Home = (): JSX.Element => {
   const { theme } = useTheme();

@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import styles from '../styles/2-components/about.module.scss';
 
+const easeOutExpoTransition = { duration: 1.2, ease: [0.16, 1, 0.3, 1] };
+
 const About = (): JSX.Element => {
   const vidRef = React.useRef<HTMLVideoElement>(null);
   const handlePlayVideo = () => {
@@ -36,15 +38,27 @@ const About = (): JSX.Element => {
         <section className={`${styles.section} ${styles.about}`}>
           <div className={styles['split-section']}>
             <div className={`${styles.card} ${styles.firstCard}`}>
-              <h2>
-                <span className={styles.header1}>software.</span>
-                <span className={styles.header2}>design.</span>
-                <span className={styles.header3}>animation.</span>
-              </h2>
-              <p className={styles['card-details']}>
+              <motion.div
+                initial={{ y: 80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ easeOutExpoTransition }}
+                exit={{ opacity: 0 }}
+                className={styles['section-title']}
+              >
+                <h2 className={styles.header1}>software.</h2>
+                <h2 className={styles.header2}>design.</h2>
+                <h2 className={styles.header3}>animation.</h2>
+              </motion.div>
+              <motion.p
+                initial={{ y: 80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.05, ...easeOutExpoTransition }}
+                className={styles['card-details']}
+              >
                 Developing digital experiences that are rooted in embracing
                 curiosity, inclusion, and transparency.
-              </p>
+              </motion.p>
             </div>
             <div className={`${styles.card} ${styles.vidFrame}`}>
               <video
