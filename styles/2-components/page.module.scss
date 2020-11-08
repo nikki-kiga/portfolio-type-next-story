@@ -106,7 +106,7 @@
     grid-area: image2;
   }
 
-  @media (max-width: 499px) {
+  @media (min-width: 10px) and (max-width: 759px) {
     .header1 {
       padding: 10vh 0 5vh 0;
       @include responsive-font(4vw, 30px, 48px, 50px);
@@ -145,6 +145,7 @@
     .body1 {
       font-size: 1.75vh;
     }
+
   }
 }
 
@@ -223,7 +224,7 @@
     align-self: center;
     text-align: right;
     grid-area: header1;
-    color: var(--colorPrimary)
+    color: var(--colorSecondary)
   }
 
   .header2 {
@@ -232,6 +233,7 @@
     text-align: left;
     font-size: 55px;
     margin:0 10% 0 -20%;
+    color: var(--colorAccent);
     grid-area: header2;
   }
 

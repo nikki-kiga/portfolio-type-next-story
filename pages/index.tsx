@@ -82,7 +82,7 @@ const Home = (): JSX.Element => {
                   transition={{ duration: 0.6, easeOutExpoTransition }}
                   exit={{ opacity: 0 }}
                   className={styles['text-second']}
-                   >
+                >
                   Kiga
                 </motion.h1>
               </div>
