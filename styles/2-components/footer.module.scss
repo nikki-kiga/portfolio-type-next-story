@@ -2,21 +2,16 @@
 @import '../1-base/fonts';
 
 .footer {
-
   flex-shrink: 0;
-
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: var(--colorSurface);
+  // background: var(--colorSurface);
   color: var(--colorOnSurface);
   display: flex;
   align-items: flex-end;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   justify-content: space-between;
-}
-.links {
-  visibility: hidden;
 }
 
 .socials {
@@ -39,3 +34,13 @@
   }
 }
 
+@media (max-width: 780px) {
+  .socials {
+    display: flex;
+    flex-direction: row;
+    & > li {
+      padding: .5rem .5rem 0 0;
+      margin-right: .25rem;
+    }
+  }
+}
