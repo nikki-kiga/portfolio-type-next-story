@@ -46,25 +46,15 @@ const Home = (): JSX.Element => {
                 >
                   Nikki
                 </motion.h1>
-                <motion.h1
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, easeOutExpoTransition }}
-                  exit={{ opacity: 0 }}
-                  className={styles['text-second']}
-                >
-                  Kiga
-                </motion.h1>
-
                 <motion.div
                   className={styles['splash-image-wrapper']}
                   initial={{
-                    y: '8%',
+                    // y: '8%',
                     opacity: 0,
                     height: 0,
                   }}
                   animate={{
-                    y: 0,
+                    // y: 0,
                     opacity: 1,
                     height: '100%',
                     transition: { delay: 0.2, duration: 1.4, ...easeOutExpo },
@@ -86,6 +76,15 @@ const Home = (): JSX.Element => {
                     )}
                   </div>
                 </motion.div>
+                <motion.h1
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, easeOutExpoTransition }}
+                  exit={{ opacity: 0 }}
+                  className={styles['text-second']}
+                >
+                  Kiga
+                </motion.h1>
               </div>
             </div>
           </section>

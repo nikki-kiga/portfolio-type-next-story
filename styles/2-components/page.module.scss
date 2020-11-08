@@ -2,14 +2,17 @@
 @import '../1-base/breakpoints';
 @import '../1-base/boxshadow';
 
+//Keep section at block to calculate expanding content
+//min height means section will always be at least that tall
 .section {
-  min-height: 100vh;
+  min-height: 100%;
   display: block;
   color: var(--colorOnSurface);
   background: var(--colorSurface);
 }
 
 .section1 {
+  height: 100vh;
   align-items: center;
   display: flex;
   width: 100%;
@@ -20,7 +23,6 @@
   }
 
   .splash {
-    height: 100%;
     text-align: center;
     font-family: var(--fontSplash);
     color: var(--colorOnSurface);
@@ -28,75 +30,84 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    @include responsive-font(15vw, 80px, 180px, 160px);
+
+    h1 {
+     font-size: 22vw;
+    }
+    
   }
 
   .splash-image-wrapper {
     width: 100%;
-    .splash-image {
-      width: 70vw;
-      max-width: 850px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-    .rectImage {
-      max-height: 400px;
-    }
     .squareImage {
       max-height: 500px;
     }
   }
   .text-first {
-    left: 50%;
     z-index: 50;
-    position: absolute;
-    top: 0;
+    position: relative;
+    transform: translateY(40%);
     filter: brightness(95%);
-    transform: translate(-50%, -50%);
     text-shadow: 1px 4px 4px var(--colorShadow);
   }
   .text-second {
     filter: brightness(90%);
     z-index: 50;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    text-shadow: 1px 6px 6px var(--colorShadow);
+    position: relative;
+    transform: translateY(-40%);
+    text-shadow: 1px 4px 4px var(--colorShadow);
   }
+}
 
-  @media (min-width: 905px) {
-    
-    .text-first {
-      top: 0;
-      left: 0;
-      translate: 100% 0;
-    }
-    .text-second {
-      bottom: 0;
-      left: 100%;
-      translate: -100% 0;
+@media (max-width: 1009px) {
+  .rectImage {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1010px) {
+
+  .splash {
+    h1 {
+      font-size: 250px !important;
+     }
+  }
+  .splash-image {
+    width: 70vw;
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .rectImage {
+      max-height: 50vh;
     }
   }
-
+  .text-first {
+    text-align: start;
+    margin-left: 20vw;
+  }
+  .text-second {
+    text-align: end;
+    margin-right: 20vw;
+  }
 }
 
 
 .section2 {
+  min-height: 100vh;
+  display: block;
+  padding: 0 2rem;
+
   .header1 {
     grid-area: header1;
-    @include responsive-font(4vw, 28px, 160px, 50px);
   }
 
   .header2 {
     grid-area: header2;
-    text-align: right;
-    @include responsive-font(3vw, 20px, 90px, 30px);
   }
 
   .body1 {
     grid-area: body1;
-    @include responsive-font(2.5vw, 16px, 40px, 20px);
   }
 
   .image1 {
@@ -105,114 +116,152 @@
 
   .image2 {
     grid-area: image2;
-    padding-bottom: 200px;
   }
 
+  @media (min-width: 10px) and (max-width: 759px) {
+    .header1 {
+      padding: 10vh 0 5vh 0;
+      @include responsive-font(4vw, 30px, 48px, 50px);
+    }
+
+    .header2 {
+      text-align: right;
+      padding-bottom: 10vh;
+      @include responsive-font(3vw, 20px, 90px, 30px);
+
+    }
+    .body1 {
+      padding-bottom: 10vh;
+      font-size: 2.5vw;
+    }
+
+    .image1 {
+      padding-bottom: 10vh;
+    }
+
+    .image2 {
+      padding-bottom: 10vh;
+    }
+
+
+  }
+
+  @media (min-width: 500px ) and (max-width: 759px) {
+    .header1 {
+      font-size: 4vh;
+    }
+    .header2 {
+      font-size: 2.75vh;
+    }
+
+    .body1 {
+      font-size: 1.75vh;
+    }
+
+  }
+}
+
+@media  (min-width: 760px) and (max-width: 1029px) {
+  .image2 {
+    position: relative;
+    padding-bottom: 5vh;
+  }
+  
+  .section2 {
+    padding-top: 4rem;
+  }
+  
   .duoHighlight {
-    margin: 0 2rem;
-    // padding: 2rem 0 0 0;
-    align-content: center;
     display: grid;
     grid-template-areas:
-    "header1"
-    "body1"
-    "image1"
-    "header2"
-    "image2"
+    "header1 . . ."
+    "header1 body1 image2 image2"
+    "header1 body1 image2 image2"
+    "image1 image1 image1 header2"
+    "image1 image1 image1 header2"
     ;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20% auto;
-    grid-gap: 1.5rem;
+    grid-template-columns: 12.5% 1fr 25% 25%;
+    grid-template-rows: minmax(20, auto);
+    grid-gap: 1rem 1rem;
   }
 
-  @media  (min-width: 760px) {
-    .section2 {
-      padding-top: 4rem;
-    }
-    
-    .duoHighlight {
-      grid-template-areas:
-      "header1  . . ."
-      "header1  body1 . ."
-      "header1 body1 image2 image2"
-      "image1 image1 image1 header2"
-      "image1 image1 image1 header2"
-      ;
-      grid-template-columns: 12.5% 1fr 25% 25%;
-      grid-template-rows: minmax(20, auto);
-      grid-gap: 2rem 1rem;
-    }
-  
-    .image1{
-      padding-bottom: 130px;
-    }
-  
-    .header1 {
-      display: flex;
-      align-items: end;
-      justify-content: flex-end;
-      writing-mode: vertical-rl;
-      text-orientation: sideways-right;
-    }
-  
-    .header2 {
-      @include responsive-font(3vw, 30px, 100px, 50px);
-      display:flex;
-      text-align: left;
-      align-items: flex-start;
-    }
-  
-    .body1 {
-      display: flex;
-      align-items: center;
-      justify-items: flex-end;
-      text-align: right;
-    }
+  .image1{
+    padding-bottom: 130px;
+    margin-bottom: 2rem;
   }
 
-  @media (min-width: 1030px) {
-    .duoHighlight {
-      display: grid;
-    }
-    .image2 {
-      margin: 6rem 0 0 0;
-      display: flex;
-      justify-self: flex-end;
-      align-self: flex-end;
-    };
-  
-    .image1 {
-      z-index: 50;
-      max-width: 600px;
-      // object-position: 50% 50%;
-      object-fit: contain;
-      display: flex;
-      justify-self: flex-start;
-      padding-left: 100px;
-    }
-  
-    .header1 {
-      display: flex;
-      justify-self: flex-end;
-      align-self: flex-start;
-      padding-top: 100px;
-      background: var(--colorMid);
-    }
-  
-    .header2 {
-      display:flex;
-      font-size: 40px;
-      margin-left: -200px;
-      justify-self: flex-start;
-    }
-  
-    .body1 {
-      margin: 8rem 0 0 0;
-      align-self: start;
-    }
+  .header1 {
+    display: flex;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
   }
-  
-  
+
+  .header2 {
+    font-size: 30px;
+    display:flex;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .body1 {
+    text-align: right;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1030px) {
+  .image2 {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    grid-area: image2;
+  };
+
+  .image1 {
+    align-self: center;
+    grid-area: image1;
+  }
+
+  .header1 {
+    z-index: 50;
+    font-size: 100px;
+    align-self: center;
+    text-align: right;
+    grid-area: header1;
+    color: var(--colorSecondary)
+  }
+
+  .header2 {
+    z-index: 50;
+    padding-top: 20%;
+    text-align: left;
+    font-size: 55px;
+    margin:0 10% 0 -20%;
+    color: var(--colorAccent);
+    grid-area: header2;
+  }
+
+  .body1 {
+    padding-left: 1rem;
+    font-size: 24px;
+    grid-area: body1;
+  }
+
+
+
+  .duoHighlight {
+    display: grid;
+    grid-template-areas:
+    "header1 image1"
+    "image2 header2"
+    "image2 body1"
+    ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh auto auto;
+    grid-gap: 1rem 1rem;
+  }
 
   
 }
