@@ -33,16 +33,12 @@
 
     h1 {
      font-size: 22vw;
-     ;
     }
     
   }
 
   .splash-image-wrapper {
     width: 100%;
-    .rectImage {
-      max-height: 400px;
-    }
     .squareImage {
       max-height: 500px;
     }
@@ -63,12 +59,28 @@
   }
 }
 
+@media (max-width: 1009px) {
+  .rectImage {
+    max-height: 400px;
+  }
+}
+
 @media (min-width: 1010px) {
+
+  .splash {
+    h1 {
+      font-size: 250px !important;
+     }
+  }
   .splash-image {
     width: 70vw;
     max-width: 850px;
     margin-right: auto;
     margin-left: auto;
+
+    .rectImage {
+      max-height: 50vh;
+    }
   }
   .text-first {
     text-align: start;
@@ -201,16 +213,9 @@
 }
 
 @media (min-width: 1030px) {
-
-  .section2 {
-    height: 200vh;
-  }
   .image2 {
     padding-top: 4rem;
     padding-bottom: 2rem;
-    // max-width: 25vw;
-    // justify-self: flex-end;
-    // align-self: flex-end;
     grid-area: image2;
   };
 
@@ -220,6 +225,7 @@
   }
 
   .header1 {
+    z-index: 50;
     font-size: 100px;
     align-self: center;
     text-align: right;
@@ -239,7 +245,7 @@
 
   .body1 {
     padding-left: 1rem;
-    font-size: 30px;
+    font-size: 24px;
     grid-area: body1;
   }
 
