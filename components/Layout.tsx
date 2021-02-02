@@ -13,9 +13,7 @@ const Layout = ({ children }): JSX.Element => {
       <div className={styles['content-wrap']}>
         <div className={styles['non-footer']}>
           <Header />
-          <main className={styles['main-content']}>
-            {children}
-          </main>
+          <main className={styles['main-content']}>{children}</main>
         </div>
         <Footer />
       </div>
