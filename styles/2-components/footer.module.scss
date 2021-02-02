@@ -3,10 +3,9 @@
 
 .footer {
   flex-shrink: 0;
-  position: absolute;
   bottom: 0;
   width: 100%;
-  // background: var(--colorSurface);
+  background: var(--colorSurface);
   color: var(--colorOnSurface);
   display: flex;
   align-items: flex-end;
