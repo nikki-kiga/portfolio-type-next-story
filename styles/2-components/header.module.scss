@@ -8,6 +8,7 @@
   width: 100%;
   padding: 2rem;
   color: var(--colorOnSurface);
+  background: var(--colorSurface);
   @include responsive-font(2vw, 20px, 32px, 24px);
 }
 

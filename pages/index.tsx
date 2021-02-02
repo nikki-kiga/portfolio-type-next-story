@@ -17,10 +17,10 @@ const Home = (): JSX.Element => {
   return (
     <Layout>
       <Head>
-        <title>Home Page for XX</title>
+        <title>Nikki Kiga | Software Engineer</title>
         <meta
           name="description"
-          content="The home page for XX. Learn more about YY."
+          content="Nikki Kiga is a software engineer who appreciates clean data and straightforward tooling."
         ></meta>
         <meta
           name="viewport"
@@ -90,14 +90,16 @@ const Home = (): JSX.Element => {
           </section>
           <section className={`${styles.section} ${styles.section2}`}>
             <div className={styles.duoHighlight}>
-              <h1 className={styles.header1}>Architecto preferendis.</h1>
+              <h1 className={styles.header1}>Software Engineer.</h1>
+              <div className={styles.body1}>
+                <p className={styles.body1}>
+                  I appreciate clean data and straightforward tooling. Lately, I
+                  find myself drawn to what’s happening in the Jamstack space.
+                  This site is built with NEXT.js, while others I’ve worked with
+                  use Gatsby.{' '}
+                </p>
+              </div>
 
-              <p className={styles.body1}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Expedita consequuntur quibusdam, eveniet in, ipsam delectus
-                ducimus adipisci error enim sequi omnis, veritatis odio
-                inventore nulla vero itaque pariatur dolore?
-              </p>
               <img
                 className={styles.image1}
                 src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452889/Portfolio/grey-mod_diqs91.png"
@@ -105,7 +107,7 @@ const Home = (): JSX.Element => {
               />
               <h2
                 className={styles.header2}
-              >{`"Illo doloribus quibusdam perspiciatis aliquam voluptatis ipsum"`}</h2>
+              >{`"Build the right tool for the experience instead of fitting the experience to the tool"`}</h2>
               <img
                 className={styles.image2}
                 src="https://res.cloudinary.com/dsnywj1pi/image/upload/v1604452880/Portfolio/grey-blob_kzcypb.png"

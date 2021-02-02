@@ -3,10 +3,8 @@
 @import '../1-base/boxshadow';
 
 .section {
-  min-height: 100vh;
-  height: auto;
+  height: 100%;
   color: var(--colorOnSurface);
-  background: var(--colorSurface);
   display: flex;
 }
 
@@ -28,11 +26,8 @@
   grid-area: vidFrame;
 }
 
-.card-details{
-  position: block;
-  margin: 0 2rem .5rem 2rem;
-  grid-area: cardDeets;
-  font-size:22px;
+.section-body {
+  margin: 1rem 2rem;
 }
 
 .section-title {
@@ -41,7 +36,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   grid-area: sectionTitle;
-  position: block;
   font-size: 26px;
 
   & > h2 {
@@ -66,7 +60,7 @@
   }
 }
 
-@media (min-width: 540px) {
+@media (min-width: 540px ) and (max-width: 759px){
   .firstCard {
     margin: 0 2rem;
     display: flex;
@@ -83,9 +77,6 @@
     padding: 0;
     margin: 0;
     display: flex;
-    text-align: right;
-    align-self: center;
-    font-size: 19px;
   }
 
   .split-section {
@@ -97,23 +88,13 @@
     grid-template-rows: 20% auto;
   }
 }
-@media (min-height: 760px) and (max-width: 760){
-  .section-title {
-    font-size: 48px;
-  }
-  .card-details {
-    font-size: 32px;
-    align-self: flex-end;
-    margin-bottom: 1rem;
-  }
-}
 
 @media (min-width: 930px) {
   .section-title {
     display: grid;
     grid-template-columns: 5% 1fr 1fr;
     grid-template-rows: 80px 100px auto;
-    font-size: 50px;
+    font-size: 36px;
     .header1 {
       grid-column-start: 1;
       grid-row-start: 1;
@@ -130,35 +111,34 @@
   }
 
   .card-details {
-    font-size: 30px;
+    font-size: 22px;
   }
 
   .firstCard {
     flex-direction: column;
+    grid-area: firstCard;
+  }
+  .vidFrame {
+    height: 100%;
+    grid-area: vidFrame;
+    position: relative;
+    .highlightReel {
+      width: 100%;
+      max-width: 1000px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .split-section {
+    padding: 0 2rem;
+    display: grid;
     grid-template-areas:
     "firstCard vidFrame";
-    grid-template-columns: calc(60% - 2rem) 40%;
-    grid-template-rows: minmax(500, auto);
+    grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
   }
-  .vidFrame {
-    height: 60vh;
-    
-    .highlightReel {
-      width: 60vh;
-    }
-  }
-}
 
-@media (min-width: 1026) {
-
-  .section-title {
-    font-size: 60px;
-  }
-  .card-details {
-    font-size: 36px;
-  }
 }
