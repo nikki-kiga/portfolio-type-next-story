@@ -93,7 +93,11 @@ const Home = (): JSX.Element => {
               <h1 className={styles.header1}>Software Engineer.</h1>
               <div className={styles.body1}>
                 <p className={styles.body1}>
-                I appreciate clean data and straightforward tooling. Lately, I find myself drawn to what’s happening in the Jamstack space. This site is built with NEXT.js, while others I’ve worked with use Gatsby.                 </p>
+                  I appreciate clean data and straightforward tooling. Lately, I
+                  find myself drawn to what’s happening in the Jamstack space.
+                  This site is built with NEXT.js, while others I’ve worked with
+                  use Gatsby.{' '}
+                </p>
               </div>
 
               <img

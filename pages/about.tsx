@@ -65,10 +65,14 @@ const About = (): JSX.Element => {
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ delay: 0.10, ...easeOutExpoTransition }}
+                  transition={{ delay: 0.1, ...easeOutExpoTransition }}
                   className={styles['card-details']}
                 >
-  My previous experiences in data modeling give me a keen awareness of assumptions about data integrity and maintenance. Meanwhile, my technical project manager experiences remind me to keep the whole timeline in mind and implement the best tools for the team and project.
+                  My previous experiences in data modeling give me a keen
+                  awareness of assumptions about data integrity and maintenance.
+                  Meanwhile, my technical project manager experiences remind me
+                  to keep the whole timeline in mind and implement the best
+                  tools for the team and project.
                 </motion.p>
                 <br></br>
                 <motion.p
@@ -78,7 +82,10 @@ const About = (): JSX.Element => {
                   transition={{ delay: 0.15, ...easeOutExpoTransition }}
                   className={styles['card-details']}
                 >
-  I enjoy approaching a problem from multiple angles. Web apps require constantly reevaluating similar issues from different perspectives. There are always new tools and libraries that enable sharing more compelling stories.
+                  I enjoy approaching a problem from multiple angles. Web apps
+                  require constantly reevaluating similar issues from different
+                  perspectives. There are always new tools and libraries that
+                  enable sharing more compelling stories.
                 </motion.p>
               </div>
             </div>
