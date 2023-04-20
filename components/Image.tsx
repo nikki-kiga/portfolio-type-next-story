@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 export interface ImageProps {
   path: string;
   description: string;

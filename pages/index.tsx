@@ -2,11 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
-import { ImageSet } from 'caravaggio-react';
-import sourceSet from '../components/sourceSet';
-
 import styles from '../styles/2-components/page.module.scss';
-import ImageOpt from '@components/ImageOpt';
 import { useTheme } from 'providers/ThemeProvider';
 
 const easeOutExpoTransition = { duration: 1.4, ease: [0.16, 1, 0.3, 1] };
